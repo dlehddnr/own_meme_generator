@@ -9,6 +9,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1 class="title">Meme Generator</h1>
+    <canvas id="jsCanvas" class="canvas"></canvas>
+    <div class="controls">
+      <div class="controls__range">
+        <span>Text Size Control </span>
+        <input
+          type="range"
+          if="jsRange"
+          min="10"
+          max="50"
+          value="30"
+          step="1"
+        />
+      </div>
+      <div class="controls__inputs">
+        <input type="text" placeholder="Top Part Text" />
+        <input type="text" placeholder="Bot Part Text" />
+      </div>
+      <div class="controls__btns">
+        <button id="jsUpload">Upload</button>
+        <button id="jsSave">Save</button>
+      </div>
+    </div>
+    <div class="text_colors">
+      <div class="text_color" style="background-color: #ff9ff3"></div>
+      <div class="text_color" style="background-color: #feca57"></div>
+      <div class="text_color" style="background-color: #ee5253"></div>
+      <div class="text_color" style="background-color: #48dbfb"></div>
+      <div class="text_color" style="background-color: #1dd1a1"></div>
+      <div class="text_color" style="background-color:#009432"></div>
+      <div class="text_color" style="background-color: #54a0ff"></div>
+      <div class="text_color" style="background-color: #5f27cd"></div>
+      <div class="text_color" style="background-color: black"></div>
+      <div class="text_color" style="background-color: white"></div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
