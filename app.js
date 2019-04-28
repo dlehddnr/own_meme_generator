@@ -7,12 +7,14 @@ const topInput = document.getElementById("jsTopInput");
 const botInput = document.getElementById("jsBotInput");
 const formTop = document.getElementById("jsForm__top");
 const formBot = document.getElementById("jsForm__bot");
+const range = document.getElementById("jsRange");
 const img = new Image();
 
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 
-ctx.font = "30px Comic Sans MS";
+let textFont = "30px Comic Sans MS";
+ctx.font = textFont;
 ctx.fillStyle = "black";
 ctx.textAlign = "center";
 
@@ -47,6 +49,16 @@ const getColor = () => {
   ctx.fillStyle = color;
 };
 
+const handleRange = event => {
+  const textSize = event.target.value;
+  textFont = `${textSize} Comic Sans MS`;
+  console.log(textFont);
+  ctx.font = textFont;
+};
+
+if (range) {
+  range.addEventListener("input", handleRange);
+}
 function init() {
   uploadBtn.addEventListener("click", handleUpload);
   formTop.addEventListener("submit", handleTopText);
