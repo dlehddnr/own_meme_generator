@@ -1,5 +1,6 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
+const colors = document.getElementsByClassName("text_color");
 const uploadBtn = document.getElementById("jsUpload");
 const input = document.getElementById("jsInput");
 const topInput = document.getElementById("jsTopInput");
@@ -29,13 +30,21 @@ const handleUpload = () => {
 const handleTopText = () => {
   event.preventDefault();
   let topValue = topInput.value;
-  ctx.strokeText(topValue, 350, 50);
+  ctx.fillText(topValue, 350, 50);
+  topInput.value = "";
 };
 
 const handleBotText = () => {
   event.preventDefault();
   let botValue = botInput.value;
-  ctx.strokeText(botValue, 350, 600);
+  ctx.fillText(botValue, 350, 600);
+  botInput.value = "";
+};
+
+const getColor = () => {
+  const color = event.target.style.backgroundColor;
+  console.log(color);
+  ctx.fillStyle = color;
 };
 
 function init() {
@@ -43,6 +52,8 @@ function init() {
   formTop.addEventListener("submit", handleTopText);
   formBot.addEventListener("submit", handleBotText);
 }
+
+Array.from(colors).forEach(color => color.addEventListener("click", getColor));
 
 if (canvas) {
   init();
