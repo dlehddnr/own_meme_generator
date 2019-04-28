@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
@@ -24,10 +23,15 @@
         />
       </div>
       <div class="controls__inputs">
-        <input type="text" placeholder="Top Part Text" />
-        <input type="text" placeholder="Bot Part Text" />
+        <form id="jsForm__top">
+          <input id="jsTopInput" type="text" placeholder="Top Part Text" />
+        </form>
+        <form id="jsForm__bot">
+          <input id="jsBotInput" type="text" placeholder="Bot Part Text" />
+        </form>
       </div>
       <div class="controls__btns">
+        <input id="jsInput" type="text" placeholder="Type URL" />
         <button id="jsUpload">Upload</button>
         <button id="jsSave">Save</button>
       </div>
@@ -44,6 +48,7 @@
       <div class="text_color" style="background-color: black"></div>
       <div class="text_color" style="background-color: white"></div>
     </div>
+
     <script src="app.js"></script>
   </body>
 </html>

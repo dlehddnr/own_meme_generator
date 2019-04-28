@@ -42,6 +42,11 @@ body {
 
 .controls__inputs {
   margin: 20px 0;
+  display: flex;
+}
+
+.controls__inputs form:not(:last-child) {
+  margin-right: 10px;
 }
 
 .text_colors {
